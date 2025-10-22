@@ -57,7 +57,7 @@ public:
     {
         if (isEmpty())return -1;
         if (back == 0) return arr[capacity - 1];
-        return arr[back];
+        return arr[back-1];
     }
     
     bool isEmpty()
