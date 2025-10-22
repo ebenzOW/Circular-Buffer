@@ -24,20 +24,24 @@ public:
         {
             arr[back] = a;
             size++;
-            back++;
-            if (back == capacity - 1) back = 0;
+            back = (back + 1) % capacity;
         }
     }
 
     int pop_front() {
+        int temp;
         if (size != 0) {
-            front++;
             size--;
-            if (front == capacity - 1) front = 0;
+            temp = arr[front];
+
+            front = (front + 1) % capacity;
         }
+        return temp;
     }
 
 };
+
+//RULE OF THREEEEE
 
 int main()
 {
