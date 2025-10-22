@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class CircularBuffer {
+class MyCircularQueue {
 
 private:
     int* arr;
@@ -12,31 +12,57 @@ private:
     int back;
 
 public:
-    CircularBuffer(int capacity = 5) : capacity(capacity) {
+    MyCircularQueue(int capacity = 5) : capacity(capacity) {
         arr = new int[capacity];
         size = 0;
         front = 0;
         back = 0;
     }
+    
+    ~MyCircularQueue()
+    {
 
-    void push_back(int a) {
+    }
+
+    bool enQueue(int a) {
         if (size != capacity)
         {
             arr[back] = a;
             size++;
             back = (back + 1) % capacity;
+            return true;
         }
+        return false;
     }
 
-    int pop_front() {
+    bool deQueue() {
         int temp;
         if (size != 0) {
             size--;
-            temp = arr[front];
-
             front = (front + 1) % capacity;
+            return true;
         }
-        return temp;
+        return false;
+    }
+
+    int Front()
+    {
+
+    }
+    
+    int Rear()
+    {
+
+    }
+    
+    bool isEmpty()
+    {
+
+    }
+
+    bool isFull()
+    {
+
     }
 
 };
