@@ -21,7 +21,10 @@ public:
     
     ~MyCircularQueue()
     {
-
+        delete[] arr;
+        size = 0;
+        front = 0;
+        back = 0;
     }
 
     bool enQueue(int a) {
@@ -47,22 +50,24 @@ public:
 
     int Front()
     {
-
+        return arr[front];
     }
     
     int Rear()
     {
-
+        return arr[back];
     }
     
     bool isEmpty()
     {
-
+        if (size == 0) return true;
+        return false;
     }
 
     bool isFull()
     {
-
+        if (size == capacity) return true;
+        return false;
     }
 
 };
