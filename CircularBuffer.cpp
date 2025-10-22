@@ -39,7 +39,6 @@ public:
     }
 
     bool deQueue() {
-        int temp;
         if (size != 0) {
             size--;
             front = (front + 1) % capacity;
@@ -50,11 +49,14 @@ public:
 
     int Front()
     {
+        if (isEmpty())return -1;
         return arr[front];
     }
     
     int Rear()
     {
+        if (isEmpty())return -1;
+        if (back == 0) return arr[capacity - 1];
         return arr[back];
     }
     
@@ -71,11 +73,3 @@ public:
     }
 
 };
-
-//RULE OF THREEEEE
-
-int main()
-{
-    std::cout << "Hello World!";
-    return 0;
-}
